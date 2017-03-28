@@ -15,6 +15,7 @@
 		E28A9A9F1E8A0C6200858007 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E28A9A9D1E8A0C6200858007 /* LaunchScreen.storyboard */; };
 		E28A9AAA1E8A0C6200858007 /* RuntimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E28A9AA91E8A0C6200858007 /* RuntimeTests.m */; };
 		E28A9AB51E8A0C6200858007 /* RuntimeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E28A9AB41E8A0C6200858007 /* RuntimeUITests.m */; };
+		E28A9AC51E8A0FE000858007 /* Persion.m in Sources */ = {isa = PBXBuildFile; fileRef = E28A9AC41E8A0FE000858007 /* Persion.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		E28A9AB01E8A0C6200858007 /* RuntimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RuntimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E28A9AB41E8A0C6200858007 /* RuntimeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeUITests.m; sourceTree = "<group>"; };
 		E28A9AB61E8A0C6200858007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E28A9AC31E8A0FE000858007 /* Persion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Persion.h; sourceTree = "<group>"; };
+		E28A9AC41E8A0FE000858007 /* Persion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Persion.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		E28A9A8E1E8A0C6200858007 /* Runtime */ = {
 			isa = PBXGroup;
 			children = (
+				E28A9AC21E8A0FC500858007 /* model */,
 				E28A9A921E8A0C6200858007 /* AppDelegate.h */,
 				E28A9A931E8A0C6200858007 /* AppDelegate.m */,
 				E28A9A951E8A0C6200858007 /* ViewController.h */,
@@ -138,6 +142,15 @@
 				E28A9AB61E8A0C6200858007 /* Info.plist */,
 			);
 			path = RuntimeUITests;
+			sourceTree = "<group>";
+		};
+		E28A9AC21E8A0FC500858007 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				E28A9AC31E8A0FE000858007 /* Persion.h */,
+				E28A9AC41E8A0FE000858007 /* Persion.m */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E28A9AC51E8A0FE000858007 /* Persion.m in Sources */,
 				E28A9A971E8A0C6200858007 /* ViewController.m in Sources */,
 				E28A9A941E8A0C6200858007 /* AppDelegate.m in Sources */,
 				E28A9A911E8A0C6200858007 /* main.m in Sources */,

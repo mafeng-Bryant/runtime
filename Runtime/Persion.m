@@ -10,4 +10,15 @@
 
 @implementation Persion
 
+-(instancetype)init
+{
+    self = [super init];
+    if (self) {
+       self.name = @"AAA";
+    }
+    return self;
+}
+
+
+
 @end
