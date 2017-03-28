@@ -8,12 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Persion : NSObject
+@interface Person : NSObject
 {
      @private  float _height;
 }
 
 @property(nonatomic,copy) NSString* name;
 @property(nonatomic,assign) int age;
+
+-(NSString *)tellName;
+-(NSString *)tellSex;
 
 @end

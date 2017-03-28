@@ -7,90 +7,44 @@
 //
 
 #import "ViewController.h"
-#import "objc/runtime.h"
-#import "Persion.h"
+#import "TableViewListController.h"
 
 @interface ViewController ()
+@property (nonatomic,strong) UIButton* btn;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    NSLog(@"sss");
-    
-}
-
-
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+- (void)viewDidLoad
 {
-    /*
-    unsigned int count = 0;
-    Class *classes = objc_copyClassList(&count);
-    for (int i = 0; i<count; i++) {
-        const char *cname = class_getName(classes[i]);
-        printf("%s\n",cname);
-    }
-     */
-
-    /*
-    Class classpersion = NSClassFromString(@"Persion");
-    unsigned int count = 0;
-    Ivar *ivarList = class_copyIvarList(classpersion, &count);//获取成员变量数组
-    for (int i = 0; i<count; i++) {
-        const char *cname = ivar_getName(ivarList[i]);
-        NSString* name = [NSString stringWithUTF8String:cname];
-        NSLog(@"name = %@",name);
-    }
-    NSLog(@"---------------------------------------------------------");
-    objc_property_t *propertyList = class_copyPropertyList(classpersion, &count);//获取属性数组
-    for (int i = 0; i<count; i++) {
-        const char *cname = property_getName(propertyList[i]);
-        NSString* name = [NSString stringWithUTF8String:cname];
-        NSLog(@"name = %@",name);
-    }
-     */
-    
-    
- 
-    
-    Class classpersion = NSClassFromString(@"Persion");
-    unsigned int count = 0;
-   Ivar *ivar = class_copyIvarList(classpersion, &count);
-    for (int i = 0; i<count; i++) {
-        const char *cname = ivar_getName(ivar[i]);
-        NSString* name = [NSString stringWithUTF8String:cname];
-        if ([name isEqualToString:@"_name"]) {
-            object_setIvar(classpersion, ivar[i], @"pppp");
-        }
-    }
-    
-    
-    Persion* p = [[Persion alloc]init];
-    NSLog(@"name = %@\n",p.name);
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
+     [super viewDidLoad];
+     [self.view addSubview:self.btn];
 }
 
+#pragma mark response
+- (void)showRunTimeList:(id)sender
+{
+    TableViewListController* listVC = [[TableViewListController alloc]initWithNibName:@"TableViewListController" bundle:nil];
+    UINavigationController* na = [[UINavigationController alloc]initWithRootViewController:listVC];
+    [self presentViewController:na animated:YES completion:nil];
+}
+
+#pragma mark set and get method
+-(UIButton *)btn
+{
+    if (!_btn) {
+        UIButton* btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [btn setTitle:@"Click Me" forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        btn.frame = CGRectMake(0, 0, 100, 100);
+        [btn addTarget:self action:@selector(showRunTimeList:) forControlEvents:UIControlEventTouchUpInside];
+        btn.center =self.view.center;
+        btn.backgroundColor = [UIColor blueColor];
+        _btn = btn;
+    }
+    return _btn;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

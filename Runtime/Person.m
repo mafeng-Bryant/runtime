@@ -6,19 +6,27 @@
 //  Copyright © 2017年 test. All rights reserved.
 //
 
-#import "Persion.h"
+#import "Person.h"
 
-@implementation Persion
+@implementation Person
 
 -(instancetype)init
 {
     self = [super init];
     if (self) {
-       self.name = @"AAA";
+        self.name = @"mafeng";
     }
     return self;
 }
 
+- (NSString *)tellSex
+{
+    return @"i am a boy";
+}
 
+- (NSString *)tellName
+{
+    return @"my name is mafeng";
+}
 
 @end
